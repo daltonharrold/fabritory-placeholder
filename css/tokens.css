@@ -1,0 +1,65 @@
+/* Fabritory — tokens (light is default; dark via [data-theme="dark"]) */
+:root, [data-theme="light"] {
+  --teal: #17A6A0;
+  --violet: #6B5CE0;
+  --coral: #F0552E;
+  --amber: #F2A93B;
+  --surface: #FFFFFF;
+  --surface-alt: #F4F3F0;
+  --border: #E4E3DF;
+  --border-strong: #8A8A86;
+  --text: #17181A;
+  --text-body: #55565A;
+  --text-muted: #8A8A86;
+  --on-color: #17181A;
+  --code-bg: #17181A;
+  --code-text: #E4E3DF;
+}
+[data-theme="dark"] {
+  --violet: #8E82F0;
+  --surface: #17181A;
+  --surface-alt: #212226;
+  --border: #3A3C41;
+  --border-strong: #75767A;
+  --text: #F4F3F0;
+  --text-body: #B9B8B3;
+  --text-muted: #9A9A96;
+  --code-bg: #0E0F10;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --violet: #8E82F0;
+    --surface: #17181A;
+    --surface-alt: #212226;
+    --border: #3A3C41;
+    --border-strong: #75767A;
+    --text: #F4F3F0;
+    --text-body: #B9B8B3;
+    --text-muted: #9A9A96;
+    --code-bg: #0E0F10;
+  }
+}
+:root {
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 56px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+.wordmark { font-family: var(--font-display); font-size: 72px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.specimen { font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.heading { font-family: var(--font-display); font-size: 44px; font-weight: 600; letter-spacing: -0.02em; }
+.lede { font-family: var(--font-display); font-size: 16px; font-weight: 400; line-height: 1.55; }
+.label { font-family: var(--font-display); font-size: 14px; font-weight: 500; }
+.stat { font-family: var(--font-display); font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.spec { font-family: var(--font-mono); font-size: 16px; font-weight: 400; }
+.code { font-family: var(--font-mono); font-size: 12px; font-weight: 400; line-height: 1.6; }
+.eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; }
+.button { font-family: var(--font-mono); font-size: 11px; font-weight: 400; }

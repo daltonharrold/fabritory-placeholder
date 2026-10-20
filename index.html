@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fabritory · Multicolor, multimaterial 3D printing</title>
+<meta name="description" content="Fabritory prints parts in many colors and many materials at once. Color goes in, not on. Hard and soft fused in one part.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17181A" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Fabritory">
+<meta property="og:description" content="One print. Many colors. Many materials.">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/site.css">
+<script>
+  // Apply a saved theme before first paint; with nothing saved the page follows the OS.
+  try { var t = localStorage.getItem("fb-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="in">
+    <a class="lockup" href="./" aria-label="Fabritory home">
+      <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="18 4 28 45" width="20" height="32" fill="none" aria-hidden="true"><path d="M24 6Q24 4 26 4H38Q40 4 40 6V11L34.4 17H29.6L24 11Z" fill="#17181A"/><path d="M19.876 28A14 14 0 0 1 44.124 28Z" fill="#17A6A0"/><path d="M19.876 28H44.124A14 14 0 0 1 46 35H18A14 14 0 0 1 19.876 28Z" fill="#6B5CE0"/><path d="M18 35H46A14 14 0 0 1 44.124 42H19.876A14 14 0 0 1 18 35Z" fill="#F0552E"/><path d="M44.124 42A14 14 0 0 1 19.876 42Z" fill="#F2A93B"/></svg>
+      <span class="brand">Fabritory</span>
+    </a>
+    <nav aria-label="Sections"><a href="#what">What it does</a><a href="#make">What you can make</a></nav>
+    <div class="theme" role="group" aria-label="Theme">
+      <button type="button" data-t="light" aria-pressed="false">Light</button><button type="button" data-t="dark" aria-pressed="false">Dark</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <div class="fb-eyebrow">Multicolor · multimaterial 3D printing</div>
+    <h1>One print.<br>Many colors.<br>Many materials.</h1>
+    <p class="lede">Fabritory makes parts the way you actually picture them: color laid down layer by layer with the shape, rigid and flexible materials fused in the same print. No painting. No gluing. No assembling five pieces into one.</p>
+    <div class="layers" aria-hidden="true"><i class="l-teal"></i><i class="l-violet"></i><i class="l-coral"></i><i class="l-amber"></i></div>
+  </section>
+
+  <section class="block wrap" id="what">
+    <div class="fb-eyebrow">What it does</div>
+    <h2>Color and material, designed in from the first layer.</h2>
+    <div class="tiles">
+      <article class="tile l-teal">
+        <div class="tile-eyebrow">01 · Multicolor</div>
+        <h3>Color goes in, not on.</h3>
+        <p>Every layer can carry its own color, so logos, labels and full color schemes come off the printer finished. Nothing to paint, nothing to chip.</p>
+      </article>
+      <article class="tile l-violet">
+        <div class="tile-eyebrow">02 · Multimaterial</div>
+        <h3>Hard and soft, together.</h3>
+        <p>Rigid where it needs strength, flexible where it needs to grip, seal or bend — fused into a single part instead of stuck together after.</p>
+      </article>
+      <article class="tile l-coral">
+        <div class="tile-eyebrow">03 · Fewer parts</div>
+        <h3>Print it whole.</h3>
+        <p>Hinges, gaskets, grips and housings that used to be separate pieces come out as one. Less assembly, fewer seams, fewer things to go wrong.</p>
+      </article>
+      <article class="tile l-amber">
+        <div class="tile-eyebrow">04 · Looks like the real thing</div>
+        <h3>Prototypes that look like product.</h3>
+        <p>Show the real colors and the real feel on day one — not a gray mockup with a note that says “imagine it in blue.”</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <p>Color and material used to be something you added afterwards. <span>Now they're part of the print.</span></p>
+    </div>
+  </section>
+
+  <section class="block wrap" id="make">
+    <div class="fb-eyebrow">What you can make</div>
+    <h2>If it has more than one color or more than one feel, it's for us.</h2>
+    <ul class="makes">
+      <li><span class="dot l-teal"></span>Grips and handles<small>Rigid core · soft-touch skin</small></li>
+      <li><span class="dot l-violet"></span>Seals and gaskets<small>Printed into the housing</small></li>
+      <li><span class="dot l-coral"></span>Color-coded parts<small>Labels and markings built in</small></li>
+      <li><span class="dot l-amber"></span>Living hinges<small>Flex where it folds</small></li>
+      <li><span class="dot l-teal"></span>Enclosures and buttons<small>Hard case · soft keys</small></li>
+      <li><span class="dot l-violet"></span>Wearables<small>Structure plus comfort</small></li>
+      <li><span class="dot l-coral"></span>Models and props<small>Full color, straight off the bed</small></li>
+      <li><span class="dot l-amber"></span>Display-ready prototypes<small>Real colors · real feel</small></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <span>Made with ❤️ by the Fabritory team</span>
+    <a href="mailto:hello@fabritory.com">hello@fabritory.com</a>
+    <span>© <span id="yr">2026</span> Fabritory</span>
+  </div>
+</footer>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>

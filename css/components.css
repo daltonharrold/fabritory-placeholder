@@ -1,0 +1,46 @@
+body { margin: 0; background: var(--surface); color: var(--text); font-family: var(--font-display); -webkit-font-smoothing: antialiased; }
+.fb-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); padding: var(--space-md); }
+.fb-grid { display: grid; gap: var(--space-md); padding: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.fb-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+
+.fb-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: var(--radius-sm); cursor: pointer; }
+.fb-btn:hover { background: var(--surface-alt); }
+.fb-btn:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.fb-btn:disabled { opacity: .45; cursor: not-allowed; }
+.fb-btn-sm { font-family: var(--font-mono); font-size: 11px; padding: 6px 10px; }
+.fb-btn-md { font-family: var(--font-display); font-size: 14px; font-weight: 500; padding: 10px 16px; }
+.fb-btn-primary { background: var(--text); border-color: var(--text); color: var(--surface); }
+.fb-btn-primary:hover { background: var(--text); opacity: .88; }
+.fb-btn-accent { background: var(--violet); border-color: var(--violet); color: var(--surface); }
+.fb-btn-accent:hover { background: var(--violet); opacity: .88; }
+
+.fb-avail { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--text); padding: 4px 10px 4px 8px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); }
+.fb-avail-dot { width: 8px; height: 8px; border-radius: 50%; display: block; }
+.fb-avail-available .fb-avail-dot { background: var(--teal); }
+.fb-avail-limited .fb-avail-dot { background: var(--amber); }
+.fb-avail-full .fb-avail-dot { background: var(--coral); }
+
+.fb-card { border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); background: var(--surface); display: flex; flex-direction: column; gap: var(--space-sm); }
+.fb-card-title { font-size: 20px; font-weight: 600; letter-spacing: -.01em; color: var(--text); }
+.fb-card-body { font-size: 15px; line-height: 1.55; color: var(--text-body); }
+.fb-card-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); margin-top: var(--space-xs); padding-top: var(--space-sm); border-top: 1px solid var(--border); }
+
+.fb-stat { display: flex; flex-direction: column; gap: var(--space-xs); }
+.fb-stat-value { font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -.02em; color: var(--text); font-variant-numeric: tabular-nums; }
+.fb-stat-unit { font-size: 20px; font-weight: 500; margin-left: 2px; color: var(--text-body); }
+.fb-stat-label { font-family: var(--font-mono); font-size: 12px; color: var(--text-body); }
+
+.fb-swatch { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background: var(--surface); }
+.fb-swatch i { display: block; height: 96px; }
+.fb-swatch div { padding: var(--space-sm) 14px; display: flex; flex-direction: column; gap: 3px; }
+.fb-swatch strong { font-size: 14px; font-weight: 600; color: var(--text); }
+.fb-swatch code { font-family: var(--font-mono); font-size: 11px; color: var(--text-body); }
+.fb-swatch small { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+
+.fb-logo-tile { aspect-ratio: 1 / 1; border-radius: var(--radius-lg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+.fb-logo-tile img { width: 55%; height: 55%; object-fit: contain; }
+/* Logo grounds are part of the mark spec and stay fixed in both themes: paper, ink, white. */
+.fb-logo-paper { background: #F4F3F0; } .fb-logo-ink { background: #17181A; } .fb-logo-white { background: #FFFFFF; }
+.fb-logo-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+.fb-logo-row b { font-size: 14px; font-weight: 500; color: var(--text); }
+.fb-logo-btns { display: flex; gap: var(--space-xs); }

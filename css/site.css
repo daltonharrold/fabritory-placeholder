@@ -1,0 +1,79 @@
+/* Fabritory placeholder — page layout. Built from role tokens only (see tokens.css). */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+a { color: var(--violet); }
+a:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: var(--space-xl); padding-right: var(--space-xl); }
+
+.skip { position: absolute; left: -9999px; top: 0; }
+.skip:focus { left: var(--space-md); top: var(--space-md); z-index: 10; background: var(--surface); color: var(--text); padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
+
+/* Layer colors as fills. Text on teal, coral and amber is on-color; on violet it's surface. */
+.l-teal { background: var(--teal); color: var(--on-color); }
+.l-violet { background: var(--violet); color: var(--surface); }
+.l-coral { background: var(--coral); color: var(--on-color); }
+.l-amber { background: var(--amber); color: var(--on-color); }
+
+/* Fine horizontal lines so color fills read as printed layers. */
+.layers i, .tile { background-image: repeating-linear-gradient(to bottom, transparent 0 5px, rgba(23, 24, 26, .08) 5px 6px); }
+
+/* Header */
+header.top { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--border); }
+header.top .in { max-width: 1200px; margin: 0 auto; padding: 12px var(--space-xl); display: flex; align-items: center; gap: var(--space-lg); }
+.lockup { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
+.mark { width: 20px; height: auto; display: block; }
+/* Dark grounds take the reversed mark: white extruder, violet-light second layer. */
+[data-theme="dark"] .mark path:first-child { fill: #FFFFFF; } [data-theme="dark"] .mark path:nth-child(3) { fill: #8E82F0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mark path:first-child { fill: #FFFFFF; } :root:not([data-theme="light"]) .mark path:nth-child(3) { fill: #8E82F0; } }
+.brand { font-weight: 600; font-size: 20px; letter-spacing: -.02em; }
+nav { display: flex; gap: var(--space-lg); margin-left: auto; font-family: var(--font-mono); font-size: 12px; }
+nav a { color: var(--text-body); text-decoration: none; }
+nav a:hover { color: var(--violet); }
+.theme { display: flex; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }
+.theme button { font-family: var(--font-mono); font-size: 11px; padding: 6px 10px; border: 0; background: var(--surface); color: var(--text); cursor: pointer; }
+.theme button[aria-pressed="true"] { background: var(--text); color: var(--surface); }
+.theme button:focus-visible { outline: 2px solid var(--violet); outline-offset: -2px; }
+
+/* Hero */
+.hero { padding-top: calc(var(--space-3xl) * 1.5); padding-bottom: var(--space-xl); }
+.hero h1 { font-size: clamp(52px, 10.5vw, 136px); font-weight: 700; letter-spacing: -.035em; line-height: .95; margin: var(--space-lg) 0 var(--space-xl); }
+.lede { color: var(--text-body); font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; max-width: 680px; margin: 0; }
+.layers { display: flex; flex-direction: column; margin-top: var(--space-3xl); border-radius: var(--radius-lg); overflow: hidden; }
+.layers i { display: block; height: clamp(28px, 4vw, 44px); }
+
+/* Sections */
+section.block { padding-top: calc(var(--space-3xl) * 1.5); }
+h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 600; letter-spacing: -.03em; line-height: 1.02; margin: var(--space-sm) 0 var(--space-2xl); max-width: 900px; }
+
+.tiles { display: grid; gap: var(--space-md); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tile { border-radius: var(--radius-lg); padding: var(--space-2xl); min-height: 300px; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-sm); }
+.tile-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: auto; }
+.tile h3 { font-size: clamp(28px, 3.2vw, 40px); font-weight: 600; letter-spacing: -.025em; line-height: 1.05; margin: 0; }
+.tile p { font-size: 16px; line-height: 1.55; margin: 0; max-width: 460px; }
+
+.statement { margin-top: calc(var(--space-3xl) * 1.5); background: var(--text); color: var(--surface); padding: calc(var(--space-3xl) * 1.5) 0; }
+.statement p { font-size: clamp(30px, 4.6vw, 60px); font-weight: 600; letter-spacing: -.03em; line-height: 1.08; margin: 0; max-width: 1040px; color: color-mix(in srgb, var(--surface) 62%, var(--text)); }
+.statement span { color: var(--surface); }
+
+.makes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-2xl); }
+.makes li { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-md); align-items: center; padding: var(--space-lg) 0; border-top: 1px solid var(--border); font-size: clamp(20px, 2.2vw, 26px); font-weight: 600; letter-spacing: -.015em; color: var(--text); }
+.makes .dot { width: 14px; height: 14px; border-radius: 4px; grid-row: span 2; align-self: start; margin-top: 9px; }
+.makes small { grid-column: 2; font-family: var(--font-mono); font-size: 12px; font-weight: 400; letter-spacing: 0; color: var(--text-body); margin-top: 4px; }
+
+footer { margin-top: calc(var(--space-3xl) * 1.5); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm); padding: var(--space-lg) 0 var(--space-xl); border-top: 1px solid var(--border); color: var(--text-body); font-family: var(--font-mono); font-size: 12px; }
+
+@media (max-width: 760px) {
+  .tiles, .makes { grid-template-columns: 1fr; }
+  .tile { min-height: 240px; padding: var(--space-xl) var(--space-lg); }
+}
+@media (max-width: 640px) {
+  .wrap, header.top .in { padding-left: var(--space-md); padding-right: var(--space-md); }
+  nav { display: none; }
+  .theme { margin-left: auto; }
+  .hero { padding-top: var(--space-2xl); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
