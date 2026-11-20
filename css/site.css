@@ -56,20 +56,11 @@ nav a:hover { color: var(--text); }
 
 /* Inside a part — the cross-section does the arguing. */
 .inside { margin-top: var(--gap-section); padding: clamp(56px, 7vw, 96px) 0 clamp(48px, 6vw, 80px); background: var(--surface-alt); }
-.cut { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; margin-top: clamp(40px, 5vw, 72px); }
-.figure { margin: 0; }
-.xsection { display: block; width: 100%; height: auto; }
-.xs-core { fill: var(--border-strong); }
-.xs-plate { fill: var(--border-strong); }
-.figure figcaption { margin-top: var(--space-md); font-size: 13px; line-height: 1.5; color: var(--text-muted); max-width: 50ch; }
-
-.callouts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: clamp(22px, 3vw, 34px); }
-.callouts li { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 4px; }
+.callouts { list-style: none; margin: clamp(40px, 5vw, 64px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); }
+.callouts li { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 6px; padding-top: var(--space-md); border-top: 1px solid var(--border); }
 .callouts b { grid-column: 2; font-size: 17px; font-weight: 600; letter-spacing: -.01em; color: var(--text); }
 .callouts li > span:last-child { grid-column: 2; font-size: 15px; line-height: 1.55; color: var(--text-body); }
-.key { width: 14px; height: 14px; border-radius: 4px; margin-top: 5px; }
-.key-core { background: var(--border-strong); }
-.key-strata { background: linear-gradient(var(--teal) 0 25%, var(--violet) 25% 50%, var(--coral) 50% 75%, var(--amber) 75% 100%); }
+.key { width: 12px; height: 12px; border-radius: 3px; margin-top: 5px; }
 
 /* Cost — a comparison, not two cards. */
 .cost { margin-top: var(--gap-section); }
@@ -111,7 +102,7 @@ footer { margin-top: clamp(48px, 6vw, 80px); }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm); padding: var(--space-lg) 0 var(--space-xl); border-top: 1px solid var(--border); color: var(--text-body); font-family: var(--font-mono); font-size: 12px; }
 
 @media (max-width: 980px) {
-  .cut { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  .callouts { grid-template-columns: 1fr; gap: var(--space-lg); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .launch-head { grid-template-columns: 1fr; gap: var(--space-xl); align-items: start; }
 }
