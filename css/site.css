@@ -56,11 +56,10 @@ nav a:hover { color: var(--text); }
 
 /* Inside a part — the cross-section does the arguing. */
 .inside { margin-top: var(--gap-section); padding: clamp(56px, 7vw, 96px) 0 clamp(48px, 6vw, 80px); background: var(--surface-alt); }
-.callouts { list-style: none; margin: clamp(40px, 5vw, 64px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); }
-.callouts li { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 6px; padding-top: var(--space-md); border-top: 1px solid var(--border); }
-.callouts b { grid-column: 2; font-size: 17px; font-weight: 600; letter-spacing: -.01em; color: var(--text); }
-.callouts li > span:last-child { grid-column: 2; font-size: 15px; line-height: 1.55; color: var(--text-body); }
-.key { width: 12px; height: 12px; border-radius: 3px; margin-top: 5px; }
+.callouts { list-style: none; margin: clamp(40px, 5vw, 64px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); }
+.callouts li { display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-sm); min-height: clamp(200px, 22vw, 260px); padding: clamp(24px, 2.6vw, 36px); border-radius: var(--radius-lg); }
+.callouts b { font-size: clamp(22px, 2.3vw, 28px); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+.callouts li > span:last-child { font-size: 15px; line-height: 1.55; }
 
 /* Cost — a comparison, not two cards. */
 .cost { margin-top: var(--gap-section); }
@@ -76,27 +75,32 @@ nav a:hover { color: var(--text); }
 .make { margin-top: var(--gap-section); }
 .make h2 { max-width: 19ch; }
 .makes { list-style: none; margin: clamp(28px, 3vw, 40px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-3xl); }
-.makes li { padding: var(--space-lg) 0; border-top: 1px solid var(--border); font-size: clamp(19px, 2vw, 24px); font-weight: 600; letter-spacing: -.015em; color: var(--text); }
+.makes li { position: relative; padding: var(--space-lg) 0 var(--space-lg) 26px; border-top: 1px solid var(--border); font-size: clamp(19px, 2vw, 24px); font-weight: 600; letter-spacing: -.015em; color: var(--text); }
+.makes li::before { content: ""; position: absolute; left: 0; top: calc(var(--space-lg) + .42em); width: 11px; height: 11px; border-radius: 3px; background: var(--teal); }
+.makes li:nth-child(4n+2)::before { background: var(--violet); }
+.makes li:nth-child(4n+3)::before { background: var(--coral); }
+.makes li:nth-child(4n)::before { background: var(--amber); }
 .makes small { display: block; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--text-body); margin-top: 4px; }
 
 /* Launch — the date is the last thing you see, and the biggest. */
-.launch { margin-top: var(--gap-section); padding: clamp(56px, 7vw, 100px) 0 clamp(48px, 6vw, 84px); background: var(--text); color: var(--surface); }
+.launch { margin-top: var(--gap-section); padding: clamp(56px, 7vw, 100px) 0 clamp(48px, 6vw, 84px); background: var(--amber); color: var(--on-color); }
 .launch-head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--space-3xl); align-items: end; }
-.launch h2 { font-size: clamp(60px, 11vw, 150px); font-weight: 700; letter-spacing: -.04em; line-height: .88; margin: 0; max-width: none; color: var(--surface); }
-.launch-side p { margin: 0; font-size: 17px; line-height: 1.6; color: color-mix(in srgb, var(--surface) 72%, var(--text)); max-width: 46ch; }
+.launch h2 { font-size: clamp(60px, 11vw, 150px); font-weight: 700; letter-spacing: -.04em; line-height: .88; margin: 0; max-width: none; color: var(--on-color); }
+.launch-side p { margin: 0; font-size: 17px; line-height: 1.6; color: color-mix(in srgb, var(--on-color) 82%, var(--amber)); max-width: 46ch; }
+.launch .fb-btn { background: var(--on-color); border-color: var(--on-color); color: var(--amber); }
+.launch .fb-btn:hover { opacity: .88; }
+.launch .fb-btn:focus-visible { outline-color: var(--on-color); outline-offset: 3px; }
 .launch-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-top: var(--space-lg); }
 .readout { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-mono); }
-.readout b { font-size: 30px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--surface); }
-.readout-label { font-size: 12px; color: color-mix(in srgb, var(--surface) 62%, var(--text)); }
+.readout b { font-size: 30px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--on-color); }
+.readout-label { font-size: 12px; color: color-mix(in srgb, var(--on-color) 68%, var(--amber)); }
 
 .steps { list-style: none; margin: clamp(52px, 6vw, 88px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); counter-reset: step; }
-.steps li { display: flex; flex-direction: column; gap: 8px; padding-top: var(--space-md); border-top: 1px solid color-mix(in srgb, var(--surface) 26%, var(--text)); }
-.steps li:last-child { border-top-color: var(--coral); border-top-width: 2px; }
-.step-dot { width: 11px; height: 11px; border-radius: 3px; }
-.steps li.done .step-dot { opacity: .5; }
-.steps b { font-size: 16px; font-weight: 600; letter-spacing: -.01em; color: var(--surface); }
-.steps li.done b { color: color-mix(in srgb, var(--surface) 64%, var(--text)); }
-.steps li span:last-child { font-size: 15px; line-height: 1.55; color: color-mix(in srgb, var(--surface) 62%, var(--text)); }
+.steps li { display: flex; flex-direction: column; gap: 8px; padding-top: var(--space-md); border-top: 1px solid color-mix(in srgb, var(--on-color) 28%, var(--amber)); }
+.steps li:last-child { border-top-color: var(--on-color); border-top-width: 2px; }
+.steps b { font-size: 16px; font-weight: 600; letter-spacing: -.01em; color: var(--on-color); }
+.steps li.done b { color: color-mix(in srgb, var(--on-color) 70%, var(--amber)); }
+.steps li span:last-child { font-size: 15px; line-height: 1.55; color: color-mix(in srgb, var(--on-color) 74%, var(--amber)); }
 
 footer { margin-top: clamp(48px, 6vw, 80px); }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm); padding: var(--space-lg) 0 var(--space-xl); border-top: 1px solid var(--border); color: var(--text-body); font-family: var(--font-mono); font-size: 12px; }
