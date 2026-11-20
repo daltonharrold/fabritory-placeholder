@@ -85,16 +85,16 @@
     rwCaret.classList.add("blink");
   }
 
-  /* Launch section: days remaining until 1 January 2027. */
+  /* Launch section: days remaining until 1 February 2027. */
   var daysEl = document.getElementById("launch-days");
   var daysLabel = document.querySelector(".launch-num-label");
   if (daysEl) {
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    var days = Math.ceil((new Date(2027, 0, 1) - today) / 86400000);
+    var days = Math.ceil((new Date(2027, 1, 1) - today) / 86400000);
     if (days > 0) {
       daysEl.textContent = String(days);
-      if (daysLabel) daysLabel.textContent = (days === 1 ? "day" : "days") + " until January 2027";
+      if (daysLabel) daysLabel.textContent = (days === 1 ? "day" : "days") + " until February 2027";
     } else {
       daysEl.textContent = "Live";
       if (daysLabel) daysLabel.textContent = "Fabritory has launched";
