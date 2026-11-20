@@ -3,7 +3,7 @@ body { margin: 0; background: var(--surface); color: var(--text); font-family: v
 .fb-grid { display: grid; gap: var(--space-md); padding: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .fb-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
 
-.fb-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: var(--radius-sm); cursor: pointer; }
+.fb-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); text-decoration: none; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: var(--radius-sm); cursor: pointer; }
 .fb-btn:hover { background: var(--surface-alt); }
 .fb-btn:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
 .fb-btn:disabled { opacity: .45; cursor: not-allowed; }
