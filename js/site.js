@@ -1,4 +1,4 @@
-/* Fabritory placeholder — theme toggle, hero rewrite line, hero stack, launch countdown.
+/* Fabritory placeholder — theme toggle, hero rewrite line, launch countdown.
    No dependencies. */
 (function () {
   "use strict";
@@ -26,20 +26,6 @@
   });
   darkMq.addEventListener("change", syncThemeButtons);
   syncThemeButtons();
-
-  /* Hero stack: deposit the strata bottom-up once, then leave them alone. The top
-     stratum sweeps in last, the way the layer being printed does. CSS holds the
-     finished state, so nothing moves when motion is reduced. */
-  var stack = document.querySelector(".stack");
-  if (stack) {
-    var layers = stack.children;
-    var count = layers.length;
-    for (var i = 0; i < count; i++) {
-      layers[i].style.setProperty("--d", ((count - 1 - i) * 0.045).toFixed(3) + "s");
-    }
-    if (count) layers[0].style.setProperty("--d", ((count - 1) * 0.045 + 0.1).toFixed(3) + "s");
-    stack.classList.add("printing");
-  }
 
   /* Hero: retype the last line of the headline through a few endings.
      The markup already holds the first ending, so the line reads correctly before this runs. */
@@ -96,8 +82,7 @@
       }
     });
 
-    // Let the strata finish printing before the headline starts rewriting itself.
-    next(erase, reduceMotion.matches ? 2100 : 2600);
+    next(erase, 2100);
     rwCaret.classList.add("blink");
   } else if (rwCaret) {
     rwCaret.classList.add("blink");
